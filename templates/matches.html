@@ -65,7 +65,10 @@
 
  <img src="{{match.image}} width="400px" height="300px"">
 <center><h5 class="card-title">{{match.first_name}} {{match.last_name}}</h5></center>
+<center><p class="card-text">Age: {{match.age}}</p></center>
 <center><p class="card-text">{{match.hobbies}}</p></center>
+
+<button type="button" class="btn btn-link">Send a message</button>
 
 <a href='{{url_for('confirm_delete_matches', matches_id=match._id)}}' class='btn btn-danger'>Delete</a>
 
