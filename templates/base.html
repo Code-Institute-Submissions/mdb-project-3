@@ -28,8 +28,16 @@
     <div class="topnav">
     <a class="active" href="{{url_for('index')}}">Home</a>
     <div class="topnav-right">
-      <a href="{{url_for('show_register_form')}}">Register</a>
+      {% if current_user .is_authenticated %}
+    <a href="{{url_for('show_profile')}}">Profile</a>
       <a href="{{url_for('get_matches')}}">Find Matches</a>
+      <a href="{{url_for('logout')}}">Logout</a>
+      {% else %}
+      <a href="{{url_for('show_login')}}">Login</a>
+      <a href="{{url_for('show_register_form')}}">Register</a>
+    
+      {% endif %}
+      </body>
     </div>
   </div>
     {% block content %} 
