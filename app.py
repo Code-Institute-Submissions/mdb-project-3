@@ -218,5 +218,3 @@ if __name__ == '__main__':
         port=int(os.environ.get('PORT')),
         debug=True)
         
-# Remember to install python 3! sudo pip3 install dnspython > sudo pip3 install pymongo 
-# python3 app.py
