@@ -1,20 +1,20 @@
-{% extends 'base.html'%} {% block content %} 
+{% extends 'base.html' %}
 
-
-
+{% block content %} 
 
 <div class="container">
     </br>
-<h1>Welcome to Your Profile Page!</h1>
+
+<h1 style="color:white;">Welcome to Your Profile Page!</h1>
 </br>
-<body>
+<body style="background: url('https://images.pexels.com/photos/1824684/pexels-photo-1824684.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')";>
     <div class="container">
-<h2>
-first name: {{fn}} <br/>
-last name: {{ln}} <br/>
-age: {{a}} <br/>
-gender: {{g}} <br/>
-bio: {{bio}}
+<h2 style="color:white;">
+First name: {{fn}} <br/>
+Last name: {{ln}} <br/>
+Age: {{a}} <br/>
+Gender: {{g}} <br/>
+Bio: {{bio}}
   </h2> </ul>
     </div>
     
@@ -23,7 +23,6 @@ bio: {{bio}}
     
 
      <div class="container">
-         <h1>Got a new hobby? Update your profile by clicking on the button below!</h1></br>
  <a href= "/updateNow" class="btn btn-primary">Update Your Profile</a>
   </div>
   </div>
@@ -33,19 +32,11 @@ bio: {{bio}}
   
   
   
-  
-  
-   {% endblock content %}
-   
-   
 
   
-     <!-----Optional JavaScript----->
-     <!-----jQuery first, then Popper.js, then Bootstrap JS----->
+ 
+   
+   
+ {% endblock content %}
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-</body>
-</html>
+  </div>
