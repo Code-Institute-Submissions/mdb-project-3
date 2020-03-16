@@ -170,7 +170,11 @@ def route_update_form():
 
 @app.route('/profile')
 def show_profile():
-    return render_template('profile-page.html')
+    
+    
+    profile = conn[DATABASE_NAME][COLLECTION4].find({"_id": current_user.id})
+    
+    return render_template('profile-page.html', profile=profile)
       
 # When user updates their profile, they will be redirected to the profile page. 
         
@@ -182,8 +186,21 @@ def show_update_form():
         gender = request.form['gender']
         bio = request.form['bio']
 
-        return render_template('profile-page.html', fn=first_name, ln=last_name,  
-          a=age,  g=gender, bio=bio)
+        conn[DATABASE_NAME][COLLECTION4].update({
+        "_id":ObjectId(current_user.id)    
+        },
+        {"$set":
+            {
+            "first_name":first_name,
+            "last_name":last_name,
+            "age":age,
+            "gender":gender,
+            "bio":bio
+            }
+        })
+        
+        return redirect(url_for("show_profile"))
+
           
 
 

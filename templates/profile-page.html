@@ -1,42 +1,52 @@
-{% extends 'base.html' %}
-
-{% block content %} 
+{% extends 'base.html' %} {% block content %}
 
 <div class="container">
     </br>
 
-<h1 style="color:white;">Welcome to Your Profile Page!</h1>
-</br>
-<body style="background: url('https://images.pexels.com/photos/1824684/pexels-photo-1824684.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')";>
-    <div class="container">
-<h2 style="color:white;">
-First name: {{fn}} <br/>
-Last name: {{ln}} <br/>
-Age: {{a}} <br/>
-Gender: {{g}} <br/>
-Bio: {{bio}}
-  </h2> </ul>
-    </div>
-    
+    <h1 style="color:white;">Welcome to Your Profile Page!</h1>
     </br>
-    
-    
 
-     <div class="container">
- <a href= "/updateNow" class="btn btn-primary">Update Your Profile</a>
-  </div>
-  </div>
-  
-  
-    </br></br></br></br></br></br></br></br>
-  
-  
-  
+    <body style="background: url('https://images.pexels.com/photos/1824684/pexels-photo-1824684.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')" ;>
+        <div class="container">
+            
+            <h2 style="color:white;">
+                {% for each in profile %}
+                First name: {{each.first_name}} <br/> 
+                Last name: {{each.last_name}} <br/> 
+                Age: {{each.age}} <br/> 
+                Gender: {{each.gender}} <br/> 
+                Bio: {{each.bio}}
+                {% endfor %}
+            </h2>
+            
+        </div>
 
-  
- 
-   
-   
- {% endblock content %}
+        </br>
 
-  </div>
+
+
+        <div class="container">
+            <a href="/updateNow" class="btn btn-primary">Update Your Profile</a>
+        </div>
+</div>
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+</div>
