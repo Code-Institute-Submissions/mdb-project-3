@@ -1,4 +1,4 @@
-# Database-Project-3
+# mdb-project-3
 
 The website, which utilises python flask and MongoDB, functions much like a dating website that connects people of different backgrounds and hobbies. The user interface and experience of the website has been improved to allow users to interact with the website easily.
 
