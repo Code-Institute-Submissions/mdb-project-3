@@ -11,7 +11,7 @@ The website, which utilises python flask and MongoDB, functions much like a dati
 Please use the following username and password to login:
 
 ```
-Username:Tsmith@gmail.com
+Username: Tsmith@gmail.com
 Password: tsmith2233
 ```
 
