@@ -8,13 +8,6 @@ The website, which utilises python flask and MongoDB, functions much like a dati
 - Data integrity and user authentication has been implemented.
 - Views are filtered based on user authentication status.
 
-Please use the following username and password to login:
-
-```
-Username: Tsmith@gmail.com
-Password: tsmith2233
-```
-
 ## Send Messages Function
 - Logged in users are able to send messages to their matches. 
 
