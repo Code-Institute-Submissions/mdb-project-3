@@ -8,7 +8,7 @@ The website, which utilises python flask and MongoDB, functions much like a dati
 - Data integrity and user authentication has been implemented.
 - Views are filtered based on user authentication status.
 
-* Please note that registered users will be redirected to the login page to login with their new username/email and password. To save time, please use the following login information.
+* Please note that newly registered users will be redirected to the login page to login with their new username/email and password. To save time, please use the following login information.
 
 ```
 Username: Tsmith@gmail.com
