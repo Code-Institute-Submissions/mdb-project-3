@@ -7,21 +7,59 @@
 
 <a href="{{url_for('get_matches')}}">Reset Search</a>
 
-<!--Dropdown Search-->
-<div class="container">
+<!--Dropdown Search for Gender-->
+<div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
     {{type}}
   </button>
   <div class="dropdown-menu">
       {% for gender in gender %}
     <a class="dropdown-item" href="?type={{gender.gender}}">{{gender.gender}}</a>
-    
     {% endfor %}
-
   </div>
 </div>
+
+<!--Dropdown Search for Age-->
+  
+   <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter Matches By Age
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="?type=1">All</a>
+        <a class="dropdown-item" href="?type=20">20s</a>
+        <a class="dropdown-item" href="?type=30">30s</a>
+        <a class="dropdown-item" href="?type=40">40s</a>
+        <a class="dropdown-item" href="?type=50">50s</a>
+        <a class="dropdown-item" href="?type=60">60s</a>
+        <a class="dropdown-item" href="?type=70">70s</a>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2">
+    {% for match in search %}
+
+    <div class="col mb-4">
+<div class="card">
+
+ <img src="{{match.image}} width="200" height="400"">
+<center><h5 class="card-title">{{match.first_name}} {{match.last_name}}</h5></center>
+<center><p class="card-text">Age: {{match.age}}</p></center>
+<center><p class="card-text">{{match.hobbies}}</p></center>
+
+<button type="button" class="btn btn-link"><a href='{{url_for('send_messages', profile_id=match.user_id, match_id=match._id)}}'>Send a message</button>
+
+<a href='{{url_for('confirm_delete_matches', matches_id=match._id)}}' class='btn btn-danger'>Delete</a>
+
+  
+  </div>
+  </div>
+
+    {% endfor %}
+    </div>
 </div>
 
+ 
 </br>
   
 <!--Display data information-->
@@ -36,7 +74,7 @@
 <div class="col mb-4">
 <div class="card">
 
- <img src="{{match.image}} width="400px" height="300px"">
+ <img src="{{match.image}}" class="img-fluid" alt="Responsive image">
 <center><h5 class="card-title">{{match.first_name}} {{match.last_name}}</h5></center>
 <center><p class="card-text">Age: {{match.age}}</p></center>
 <center><p class="card-text">{{match.hobbies}}</p></center>

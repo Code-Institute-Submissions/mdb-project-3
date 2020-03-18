@@ -56,7 +56,7 @@ def logout():
 def index():
     return render_template('index.html')
     
-# ---allows authenticated users to see and delete matches---
+# ---allows authenticated users to filter gender and age---
     
 @app.route('/get_matches')
 @login_required
@@ -65,8 +65,35 @@ def get_matches():
         type = request.args.get('type')
         criteria= {} 
         
-        if type and type != 'Type':
+        if type and type != 'Type' and not type.isdigit():
             criteria['gender'] = type
+        elif type and type.isdigit():
+            data = conn[DATABASE_NAME][COLLECTION3]
+            if  type == "1":
+                search = data.find()
+            
+            elif  type == "20":
+                search = data.find({ "age": { "$gt":"20", "$lt": "30" } } )
+                
+            elif type == "30":
+                search = data.find( { "age": { "$gt":"30", "$lt": "40" } } )
+                
+            elif type == "40":
+                search = data.find( { "age": { "$gt":"40", "$lt": "50" } } )
+                
+            elif type == "50":
+                search = data.find( { "age": { "$gt":"50", "$lt": "60" } } )
+                
+            elif type == "60":
+                search = data.find( { "age": { "$gt":"60", "$lt": "70" } } )
+            
+            elif type == "70":
+                search = data.find( { "age": { "$gt":"70", "$lt": "80" } } )
+                
+            else:
+                search = data.find()
+            print("befpre remder search result")
+            return render_template("matches.html", search=search)
         else:
             type = 'Gender'
         
@@ -76,8 +103,12 @@ def get_matches():
         ,type=type)
     else:
         redirect("/login")
+        
+
     
- 
+        
+
+
 # redirects to the register page when user clicks Register link
 
 @app.route('/register')
@@ -154,8 +185,7 @@ def new_register_form():
              "password": password,
          })
         
-        return render_template('profile-page.html', fn=first_name, ln=last_name,  
-          a=age,  g=gender, bio=bio)
+        return redirect('/get_matches')
     else:
         return render_template('create-profile.html')
         
@@ -222,11 +252,6 @@ def delete_matches(matches_id):
         '_id':ObjectId(matches_id)
         })
     
-    # conn[DATABASE_NAME][COLLECTION3].remove({
-    #     'matches_id'
-    # })
-    
-    # flash("Match Has been deleted!")
     return redirect(url_for('index'))
     
 
