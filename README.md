@@ -25,8 +25,9 @@ A live demo of the website can be found here: https://angie-database-project-3.h
 | 2      | User would like to register| To include a registration form.  |
 | 3      | User would like to update profile. | To include a form that lets the user update their profile.  |
 | 4      | User would like to see matches in the database  | To include a page that displays all the matches on the website. |
-| 5      | User would like to see matches according to gender | To include a search filter that allows user to search by gender   |
-| 6      | User would like to send a message to their chosen match | To include a send message link  that redirects the user to a message textbox, which enables users to send a message to their match. |
+| 5      | User would like to filter matches based on gender | To include a search filter that allows user to search by gender   |
+| 6      | User would like to filter matches based on age | To include a search filter that allows user to search by age   |
+| 7      | User would like to send a message to their chosen match | To include a send message link  that redirects the user to a message textbox, which enables users to send a message to their match. |
 
 ## Project Structure
 ### (i) Overview
